@@ -1,5 +1,5 @@
 // parser.ts
-// A simple parser for arithmetic expressions using Ohm
+// A simple parser for arithmetic expressions using Ohm; version x
 //
 // Usage:
 // node dist/pagestest1.js input="?3 + 5 * (2 - 8)"
