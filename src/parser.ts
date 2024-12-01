@@ -984,6 +984,7 @@ if (typeof window !== "undefined") {
 		addItem: addItem
 	};
 	window.onload = () => {
+		log.logIt("starting...");
 		const basicText = window.document.getElementById("basicText") as HTMLTextAreaElement;
 		basicText.addEventListener('change', onbasicTextChange);
 
