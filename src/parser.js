@@ -18,6 +18,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { grammar } from "ohm-js";
 import { arithmetic } from "./arithmetic";
+import { Log } from "./Log";
 const startConfig = {
     debug: 0,
     example: "",
@@ -789,6 +790,7 @@ function main(config) {
         }
     }
 }
+const log = new Log();
 if (typeof window !== "undefined") {
     window.cpcBasic = {
         addItem: addItem
@@ -825,6 +827,7 @@ if (typeof window !== "undefined") {
     };
 }
 else {
+    log.logIt("starting...");
     main(fnParseArgs(global.process.argv.slice(2), startConfig));
 }
 export const testParser = {

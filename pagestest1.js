@@ -774,6 +774,13 @@
   `
     };
 
+    // Log.ts
+    class Log {
+        logIt(str) {
+            console.log(Date.now(), "LOG:", str);
+        }
+    }
+
     // parser.ts
     // A simple parser for arithmetic expressions using Ohm; version x
     //
@@ -1554,6 +1561,7 @@
             }
         }
     }
+    const log = new Log();
     if (typeof window !== "undefined") {
         window.cpcBasic = {
             addItem: addItem
@@ -1590,6 +1598,7 @@
         };
     }
     else {
+        log.logIt("starting...");
         main(fnParseArgs(global.process.argv.slice(2), startConfig));
     }
     const testParser = {
