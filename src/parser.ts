@@ -10,6 +10,7 @@
 
 import { ActionDict, Grammar, grammar, Node, Semantics } from "ohm-js";
 import { arithmetic } from "./arithmetic";
+import { Log } from "./Log";
 
 export type ConfigEntryType = string | number | boolean;
 
@@ -976,6 +977,8 @@ function main(config: ConfigType) {
 	}
 }
 
+const log = new Log();
+
 if (typeof window !== "undefined") {
 	(window as any).cpcBasic = {
 		addItem: addItem
@@ -1020,6 +1023,7 @@ if (typeof window !== "undefined") {
 		main(fnParseUri(window.location.search.substring(1), startConfig));
 	};
 } else {
+	log.logIt("starting...");
 	main(fnParseArgs(global.process.argv.slice(2), startConfig));
 }
 
