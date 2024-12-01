@@ -796,6 +796,7 @@ if (typeof window !== "undefined") {
         addItem: addItem
     };
     window.onload = () => {
+        log.logIt("starting...");
         const basicText = window.document.getElementById("basicText");
         basicText.addEventListener('change', onbasicTextChange);
         const compiledText = window.document.getElementById("compiledText");

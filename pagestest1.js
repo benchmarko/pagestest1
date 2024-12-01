@@ -775,9 +775,20 @@
     };
 
     // Log.ts
+    class LogTwo {
+        logIt(str) {
+            console.log(Date.now(), "LOGtwo:", str);
+        }
+    }
+
+    // Log.ts
     class Log {
+        constructor() {
+            this.logTwo = new LogTwo();
+        }
         logIt(str) {
             console.log(Date.now(), "LOG:", str);
+            this.logTwo.logIt(str);
         }
     }
 
@@ -1567,6 +1578,7 @@
             addItem: addItem
         };
         window.onload = () => {
+            log.logIt("starting...");
             const basicText = window.document.getElementById("basicText");
             basicText.addEventListener('change', onbasicTextChange);
             const compiledText = window.document.getElementById("compiledText");
